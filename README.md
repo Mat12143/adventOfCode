@@ -1,2 +1,2 @@
 # Advent of Code 2024
-My Advent of Code 2024 solutions in Golang
+My Advent of Code 2024 Solutions written in GoLang
