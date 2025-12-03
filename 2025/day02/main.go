@@ -5,8 +5,6 @@ import (
 	"log"
 	"strconv"
 	"strings"
-
-	"github.com/Mat12143/adventOfCode2025/utils"
 )
 
 func isValid(id string) bool {
@@ -31,10 +29,9 @@ func isValidComplicate(id string) bool {
 	return true
 }
 
-func Part1() {
+func Part1(data string) {
 	sum := 0
 
-	data := utils.ReadFileByLine("day02/input.txt")
 	for l := range strings.SplitSeq(data, ",") {
 
 		l = strings.Trim(l, "\n")
@@ -58,10 +55,9 @@ func Part1() {
 	fmt.Printf("sum: %v\n", sum)
 }
 
-func Part2() {
+func Part2(data string) {
 	sum := 0
 
-	data := utils.ReadFileByLine("day02/input.txt")
 	for l := range strings.SplitSeq(data, ",") {
 
 		l = strings.Trim(l, "\n")

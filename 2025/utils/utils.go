@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func ReadFileByLine(filename string) string {
+func ReadFile(filename string) string {
 	bytes, err := os.ReadFile(filename)
 	if err != nil {
 		log.Fatal(err)

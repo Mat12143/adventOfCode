@@ -5,8 +5,6 @@ import (
 	"math"
 	"slices"
 	"strings"
-
-	"github.com/Mat12143/adventOfCode2025/utils"
 )
 
 type Battery struct {
@@ -14,9 +12,7 @@ type Battery struct {
 	pos  int
 }
 
-func Part1() {
-	data := utils.ReadFileByLine("day03/input.txt")
-
+func Part1(data string) {
 	sum := 0
 
 	for l := range strings.SplitSeq(data, "\n") {
@@ -47,10 +43,8 @@ func getMaxJoltage(list []int, dim int) int {
 
 }
 
-func Part2() {
+func Part2(data string) {
 	sum := 0
-
-	data := utils.ReadFileByLine("day03/input.txt")
 
 	for l := range strings.SplitSeq(data, "\n") {
 

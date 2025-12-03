@@ -5,15 +5,12 @@ import (
 	"log"
 	"strconv"
 	"strings"
-
-	"github.com/Mat12143/adventOfCode2025/utils"
 )
 
-func Part1() {
+func Part1(data string) {
 	dial := 50
 	rotations := 0
 
-	data := utils.ReadFileByLine("day01/input.txt")
 	for l := range strings.SplitSeq(data, "\n") {
 		if len(l) == 0 {
 			continue
@@ -57,11 +54,10 @@ func mod(number int) int {
 	return number
 }
 
-func Part2() {
+func Part2(data string) {
 	dial := 50
 	rotations := 0
 
-	data := utils.ReadFileByLine("day01/input.txt")
 	for l := range strings.SplitSeq(data, "\n") {
 
 		if len(l) == 0 {
