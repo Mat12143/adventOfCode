@@ -98,7 +98,6 @@ func Part1(data string) {
 
 func Part2(data string) {
 	intervals := []Interval{}
-	numbers := []int{}
 
 	for l := range strings.SplitSeq(data, "\n") {
 		if len(l) == 0 {
@@ -119,9 +118,6 @@ func Part2(data string) {
 			intervals = append(intervals, Interval{
 				start, end,
 			})
-		} else {
-			number, _ := strconv.Atoi(l)
-			numbers = append(numbers, number)
 		}
 	}
 
