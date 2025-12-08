@@ -52,10 +52,7 @@ func Part1(data string) {
 func Part2(data string) {
 	matrix := [][]string{}
 
-	timeLines := 0
-
 	for l := range strings.SplitSeq(data, "\n") {
-
 		if len(l) == 0 {
 			continue
 		}
@@ -67,26 +64,39 @@ func Part2(data string) {
 		matrix = append(matrix, line)
 	}
 
-	for i := 0; i < len(matrix)-1; i++ {
-		for j := range matrix[i] {
-			curr := matrix[i][j]
+	R := len(matrix)
+	C := len(matrix[0])
 
-			switch curr {
+	numberMatrix := make([][]int, R)
+	for i := range R {
+		numberMatrix[i] = make([]int, C)
+	}
+
+	for i := 0; i < R-1; i++ {
+		for j := range C {
+
+			curr := numberMatrix[i][j]
+
+			cell := matrix[i][j]
+
+			switch cell {
 			case "S":
-				matrix[i+1][j] = "|"
-			case "|":
-				if matrix[i+1][j] == "^" {
-					timeLines += 2
-					matrix[i+1][j-1] = "|"
-					matrix[i+1][j+1] = "|"
-
-				} else {
-					matrix[i+1][j] = "|"
-
+				numberMatrix[i+1][j] = 1
+			case ".":
+				if curr != 0 {
+					numberMatrix[i+1][j] += curr
 				}
+			case "^":
+				numberMatrix[i+1][j-1] += curr
+				numberMatrix[i+1][j+1] += curr
 			}
 		}
 	}
 
-	fmt.Printf("timeLines: %v\n", timeLines)
+	tot := 0
+	for _, v := range numberMatrix[R-1] {
+		tot += v
+	}
+
+	fmt.Printf("tot: %v\n", tot)
 }
